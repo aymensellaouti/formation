@@ -7,12 +7,12 @@ export class Personne {
   age: number;
   cin: number;
   constructor(id: number= null,
-              cin: number,
-              name: string= 'fakeName',
-              firstname: string= 'fakeFirst',
-              job: string= 'Nothing',
-              path: string= 'Nothing',
-              age: number= 100) {
+              cin: number = 0,
+              name: string= '',
+              firstname: string= '',
+              job: string= '',
+              path: string= '',
+              age: number= 0) {
     this.id = id;
     this.name = name;
     this.cin = cin;

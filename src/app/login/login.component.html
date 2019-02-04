@@ -1,0 +1,42 @@
+<form #formulaire="ngForm">
+  <label for="username">Username</label>
+  <input id="username"
+         type="text"
+         class="form-control"
+         required
+         name="username"
+         [(ngModel)]="username"
+         ngModel>
+
+  <label for="email">E-mail</label>
+  <input id="email"
+         type="email"
+         email
+         required
+         class="form-control"
+         name="email"
+         ngModel
+         #mail="ngModel"
+  >
+  <div *ngIf="mail.touched && mail.invalid && mail.dirty" class="alert alert-danger">
+    Veuillez saisir un e-mail valide
+  </div>
+  <label for="pwd">Password</label>
+  <input id="pwd"
+         type="password"
+         class="form-control"
+         name="password"
+         required
+         ngModel
+         min="6"
+         #pass="ngModel"
+  >
+  <div *ngIf="pass.touched && pass.value.length<6" class="alert alert-danger">
+    La taille minimale de votre password est de 6 caractère
+  </div>
+
+  <button class="btn btn-primary"
+          (click)="treatForm(formulaire)"
+          [disabled]="!formulaire.valid"
+>Envoyer</button>
+</form>

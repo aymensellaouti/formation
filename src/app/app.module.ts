@@ -22,6 +22,8 @@ import { EmbaucheComponent } from './embauche/embauche.component';
 import {ROUTING} from './app.Routing';
 import { HeaderComponent } from './header/header.component';
 import { DetailCvComponent } from './detail-cv/detail-cv.component';
+import { LoginComponent } from './login/login.component';
+import { AddPersonneComponent } from './add-personne/add-personne.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { DetailCvComponent } from './detail-cv/detail-cv.component';
     TodoComponent,
     EmbaucheComponent,
     HeaderComponent,
-    DetailCvComponent
+    DetailCvComponent,
+    LoginComponent,
+    AddPersonneComponent
   ],
   imports: [
     BrowserModule,

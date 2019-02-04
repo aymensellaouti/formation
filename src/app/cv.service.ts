@@ -32,7 +32,10 @@ export class CvService {
   getPersonnes(): Personne[] {
     return this.personnes;
   }
-  addPersonne(): void {
+  addPersonne(personne: Personne): void {
+    const lastId = this.personnes.length - 1;
+    personne.id = this.personnes[lastId].id + 1;
+    this.personnes.push(personne);
   }
   getPersonneById(id): Personne {
     const personne = this.personnes.find(pers => pers.id == id);
