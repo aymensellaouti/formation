@@ -4,7 +4,7 @@
       <div class="tab-pane active" id="profile">
         <h4 class="m-y-2">Cv {{personne.firstname}} {{personne.name}}</h4>
         <div class="d-flex justify-content-center">
-          <img width="150px" height="150px" class="rounded-circle align-content-center" src="assets/images/{{personne?.path}}" alt="">
+          <img width="150px" height="150px" class="rounded-circle align-content-center" src="assets/images/{{personne.path|defaultImage}}" alt="">
 
         </div>
         <div class="row">

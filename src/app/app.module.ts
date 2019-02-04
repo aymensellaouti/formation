@@ -24,6 +24,9 @@ import { HeaderComponent } from './header/header.component';
 import { DetailCvComponent } from './detail-cv/detail-cv.component';
 import { LoginComponent } from './login/login.component';
 import { AddPersonneComponent } from './add-personne/add-personne.component';
+import { AsyncroComponent } from './asyncro/asyncro.component';
+import {HttpClientModule} from '@angular/common/http';
+import { DefaultImagePipe } from './pipe/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -46,11 +49,14 @@ import { AddPersonneComponent } from './add-personne/add-personne.component';
     HeaderComponent,
     DetailCvComponent,
     LoginComponent,
-    AddPersonneComponent
+    AddPersonneComponent,
+    AsyncroComponent,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ROUTING
   ],
   providers: [],

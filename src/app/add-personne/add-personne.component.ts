@@ -21,9 +21,16 @@ export class AddPersonneComponent implements OnInit {
     this.personne = new Personne();
   }
   addPersonne(formulaire: NgForm) {
-    this.cvService.addPersonne(this.personne);
-    const link = ['cv/all'];
-    this.router.navigate(link);
+    this.cvService.addPersonne(this.personne).subscribe(
+      (success) => {
+        const link = ['cv/all'];
+        this.router.navigate(link);
+      },
+      (error) => {
+        console.log('erruer');
+        alert(`Problème avec le serveur veuillez contacter l'admin`);
+      }
+    );
   }
 
 }

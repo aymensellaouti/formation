@@ -1,5 +1,5 @@
 <li (click)="selectPersonne(personne)" class="list-group-item">
-  <img src="assets/images/{{personne?.path}}" alt="{{personne?.name}}" >
+  <img src="assets/images/{{personne?.path|defaultImage}}" alt="{{personne?.name}}" >
   {{personne?.name}}
   {{personne?.firstname}}
 </li>

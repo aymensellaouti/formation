@@ -20,16 +20,30 @@ export class DetailCvComponent implements OnInit {
       (param) => {
         const id = param['id'] ;
         console.log(id);
-        this.personne = this.cvService.getPersonneById(id);
-        if (!this.personne) {
-          this.router.navigate(['/']);
-        }
+        this.cvService.getPersonneById(id).subscribe(
+          (personne) => {
+            console.log(personne);
+            this.personne = personne;
+          },
+          (error) => {
+            console.log('erreur personne non identifié');
+            this.router.navigate(['/']);
+          }
+        );
       }
     );
   }
   deletePerson(personne: Personne): void {
-    this.cvService.deletePersonne(personne);
-    this.router.navigate(['/']);
+    this.cvService.deletePersonne(personne.id).subscribe(
+      (success) => {
+        console.log('success');
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log(error);
+        alert(`Problème avec le serveur veuillez contacter l'admin`);
+      }
+    );
   }
 
 }
