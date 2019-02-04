@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-lg-4 col-sm-6">
+    <app-liste (sendPersonne)="selectPersonne($event)"></app-liste>
+  </div>
+  <div class="col-lg-8 col-sm-6">
+    <app-detail [personne]="selectedPersonne"></app-detail>
+  </div>
+</div>

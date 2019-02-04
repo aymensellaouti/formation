@@ -1,0 +1,16 @@
+<p [ngStyle]="{'color': color,
+               'backgroundColor': bgColor,
+               'font-family': fontPolice,
+               'font-size': size
+               }">
+  ngstyle works!
+</p>
+
+<label for="color">Couleur</label><input appRainbow (change)="changeCouleur(couleur.value)" #couleur id="color" type="text" class="form-control">
+<label for="size">Taille</label><input (change)="changeTaille(taille.value)" #taille id="size" type="number" class="form-control">
+<label for="police">Police</label>
+<select name="police" #police (change)="changePolice(police.value)" class="form-control" id="police">
+  <option value="Garamond">Garamond</option>
+  <option value="Arial">Arial</option>
+  <option value="Times New Roman">Times New Roman</option>
+</select>

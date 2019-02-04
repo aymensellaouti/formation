@@ -1,0 +1,13 @@
+<p [ngClass]="
+    {
+      blaugrana: isBlaugrana,
+      rossonero: isRossonero,
+      sangetor: isSangetor
+    }
+">
+  {{club|club:'jam3eya':'denya'}}
+</p>
+
+<button class="btn btn-danger" (click)="so()">Sang et Or</button>
+<button class="btn btn-dark" (click)="bg()">Blaugrana</button>
+<button class="btn btn-primary" (click)="rn()">Rosso Nerro</button>
