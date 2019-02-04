@@ -19,6 +19,9 @@ import { ClubPipe } from './pipe/club.pipe';
 import { TodoComponent } from './servicesExemples/todo/todo.component';
 import {TodoService} from './servicesExemples/todo.service';
 import { EmbaucheComponent } from './embauche/embauche.component';
+import {ROUTING} from './app.Routing';
+import { HeaderComponent } from './header/header.component';
+import { DetailCvComponent } from './detail-cv/detail-cv.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +40,14 @@ import { EmbaucheComponent } from './embauche/embauche.component';
     RainbowDirective,
     ClubPipe,
     TodoComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    HeaderComponent,
+    DetailCvComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
