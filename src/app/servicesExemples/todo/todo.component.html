@@ -1,0 +1,22 @@
+<h1>Liste Todos</h1>
+
+<div class="row">
+<div class="col-lg-6 col-sm-6">
+  <ol class="list-group">
+    <li *ngFor="let todo of todos" class="list-group-item">
+      {{todo.name}} : {{todo.description}} <i class="fa fa-trash" aria-hidden="true" (click)="deleteTodo(todo)"></i>
+    </li>
+  </ol>
+</div>
+
+<div class="col-lg-6 col-sm-6">
+  <input type="text" #nom  [(ngModel)]="name"  class="form-control">
+  <input type="text" #desc [(ngModel)]="description"  class="form-control">
+
+  <button class="btn btn-primary"
+          (click)="addTodo(nom, desc)"
+          [disabled]=" ((name.length == 0)  || (description.length == 0))">
+    Add Todo
+  </button>
+</div>
+</div>

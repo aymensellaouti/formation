@@ -16,6 +16,9 @@ import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { ClubPipe } from './pipe/club.pipe';
+import { TodoComponent } from './servicesExemples/todo/todo.component';
+import {TodoService} from './servicesExemples/todo.service';
+import { EmbaucheComponent } from './embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { ClubPipe } from './pipe/club.pipe';
     NgstyleComponent,
     NgClassComponent,
     RainbowDirective,
-    ClubPipe
+    ClubPipe,
+    TodoComponent,
+    EmbaucheComponent
   ],
   imports: [
     BrowserModule,

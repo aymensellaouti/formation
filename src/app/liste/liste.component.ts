@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Personne} from '../Model/Personne';
+import {CvService} from '../cv.service';
 
 @Component({
   selector: 'app-liste',
@@ -9,29 +10,10 @@ import {Personne} from '../Model/Personne';
 export class ListeComponent implements OnInit {
   personnes: Personne[];
   @Output() sendPersonne = new EventEmitter();
-  constructor() { }
+  constructor(private cvService: CvService) { }
 
   ngOnInit() {
-    this.personnes = [
-      new Personne(
-        1,
-        12345678,
-        'sellaouti',
-        'aymen',
-        'Teacher',
-        'as.jpg',
-        36
-      ),
-      new Personne(
-        1,
-         7112018,
-        'sellaouti',
-        'skander',
-        'Bébé',
-        'skan.jpg',
-        0
-      )
-    ];
+    this.personnes = this.cvService.getPersonnes();
   }
   selectPersonne(personne: Personne ) {
     console.log(personne);
